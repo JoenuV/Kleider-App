@@ -132,19 +132,6 @@
   color: var(--muted);
 }
 
-.link-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  min-height: 36px;
-  border: none;
-  background: none;
-  padding: 0;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--accent);
-}
-
 .wc-loading {
   display: flex;
   align-items: center;
@@ -201,19 +188,4 @@
   color: var(--muted);
 }
 
-.truncate {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
 
-.card-title {
-  font-size: 17px;
-  font-weight: 750;
-}
-
-.suggest-btn {
-  min-height: 64px;
-  font-size: 18px;
-  border-radius: 22px;
-}
