@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { BottomNav } from './components/BottomNav';
 import { FeedbackProvider } from './components/feedback';
+import { UpdatePrompt } from './components/UpdatePrompt';
 import { ensureBuiltIns } from './db/repo';
 import { HistoryPage } from './features/history/HistoryPage';
 import { MakerPage } from './features/maker/MakerPage';
@@ -34,6 +35,7 @@ export function App() {
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
           <BottomNav />
+          <UpdatePrompt />
         </div>
       </HashRouter>
     </FeedbackProvider>

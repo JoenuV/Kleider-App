@@ -6,6 +6,7 @@ import { updateSettings } from '../../db/repo';
 import type { Settings } from '../../domain/types';
 import { useSettings } from '../../hooks/useSettings';
 import { BackupSection } from './BackupSection';
+import { ActivitiesSection, InstallSection, SamplesSection, StorageSection } from './MoreSections';
 
 const THEMES = [
   { value: 'system', label: 'Automatisch' },
@@ -37,7 +38,11 @@ export function SettingsPage() {
           />
         </div>
       </section>
+      <InstallSection />
+      <ActivitiesSection />
       <BackupSection />
+      <SamplesSection />
+      <StorageSection />
       <p className="tiny muted" style={{ marginTop: 28, textAlign: 'center' }}>
         Kleider-App · alle Daten bleiben lokal auf deinem Gerät
       </p>
