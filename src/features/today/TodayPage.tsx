@@ -20,6 +20,7 @@ import '../outfit/outfit.css';
 import { makeInput, useEngineBase } from '../outfit/useEngineBase';
 import { SampleDataButton } from '../samples/SampleDataButton';
 import { WeatherCard } from './WeatherCard';
+import { YesterdayRating } from './YesterdayRating';
 import './today.css';
 
 interface TodayResult {
@@ -169,6 +170,8 @@ function TodayContent({ settings, activities }: { settings: Settings; activities
       <WeatherCard settings={settings} {...weather} />
 
       <ActivityPicker activities={activities} value={activityId} onChange={pickActivity} />
+
+      {!result && garmentMap && <YesterdayRating byId={garmentMap} />}
 
       {!result && worn.length > 0 && (
         <section className="card outfit-card">

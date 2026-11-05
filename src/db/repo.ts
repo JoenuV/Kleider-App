@@ -95,3 +95,8 @@ export async function addFeedback(itemIds: string[], value: Feedback['value'], d
 export async function getAllGarments(d: KleiderDB = db): Promise<Garment[]> {
   return d.garments.toArray();
 }
+
+/** Forgets all likes/rejections (outfit ratings stay). UI must confirm first. */
+export async function clearFeedback(d: KleiderDB = db): Promise<void> {
+  await d.feedback.clear();
+}

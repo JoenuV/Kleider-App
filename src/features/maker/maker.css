@@ -44,10 +44,6 @@
   flex-shrink: 0;
 }
 
-.icon-btn.sm-icon {
-  width: 34px;
-  height: 34px;
-}
 
 .picker-grid {
   display: grid;

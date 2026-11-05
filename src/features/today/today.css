@@ -189,3 +189,33 @@
 }
 
 
+
+.yesterday {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 6px 10px 10px;
+}
+
+.yesterday-img {
+  width: 76px;
+  flex-shrink: 0;
+}
+
+.yesterday .grow {
+  flex: 1;
+  min-width: 0;
+}
+
+.yesterday .stars {
+  margin-left: -8px;
+}
+
+.yesterday .stars button {
+  width: 38px;
+  height: 40px;
+}
+
+.yesterday .icon-btn {
+  align-self: flex-start;
+}

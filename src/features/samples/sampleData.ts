@@ -104,7 +104,7 @@ function toGarment(s: Seed, now: number, i: number): Garment {
     note: '',
     favorite: false,
     ...s,
-    createdAt: now - (SAMPLES.length - i) * 60_000,
+    createdAt: now - i * 60_000,
     updatedAt: now,
     isSample: true,
   };
