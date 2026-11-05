@@ -29,6 +29,7 @@ import {
   type SortKey,
   type WardrobeFilter,
 } from '../../lib/wardrobeFilter';
+import { SampleDataButton } from '../samples/SampleDataButton';
 import { PhotoPicker } from './PhotoPicker';
 import { setPendingPhoto } from './pendingPhoto';
 
@@ -42,7 +43,7 @@ const STATUS_OPTIONS = [
   { value: 'alle' as const, label: 'Alle' },
 ];
 
-export function WardrobeGrid({ onLoadSamples }: { onLoadSamples?: () => void }) {
+export function WardrobeGrid() {
   const garments = useGarments();
   const wear = useWearStats();
   const navigate = useNavigate();
@@ -85,11 +86,7 @@ export function WardrobeGrid({ onLoadSamples }: { onLoadSamples?: () => void }) 
               <button className="btn primary lg" onClick={() => setShowAdd(true)}>
                 <Plus size={20} /> Erstes Teil fotografieren
               </button>
-              {onLoadSamples && (
-                <button className="btn ghost" onClick={onLoadSamples}>
-                  Beispieldaten laden
-                </button>
-              )}
+              <SampleDataButton />
             </>
           }
         >

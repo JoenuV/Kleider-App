@@ -113,6 +113,10 @@ export interface WeatherSummary {
   windowMinHour: number;
   windowMaxHour: number;
   weatherCode?: number;
+  /** Which day the time window refers to (after the window ends we plan for tomorrow). */
+  day?: 'heute' | 'morgen';
+  /** Feels-like temperature per hour inside the window. */
+  hourly?: { hour: number; temp: number; rain: number; code?: number }[];
   fetchedAt: number;
 }
 

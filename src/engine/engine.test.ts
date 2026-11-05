@@ -351,3 +351,23 @@ describe('warnings', () => {
     expect(s.warnings.join(' ')).toMatch(/knapp/);
   });
 });
+
+describe('activities', () => {
+  it('prefers sporty items for sport', () => {
+    const w = [
+      ...basicWardrobe().map((g) => (g.id === 'jeans' ? { ...g, rating: 5 as const, favorite: true } : g)),
+      garment({ id: 'gym-tee', category: 'top', colors: ['orange'], styles: ['sportlich'], warmth: 1, occasions: ['sport'] }),
+      garment({ id: 'track', category: 'pants', colors: ['grau'], styles: ['sportlich'], warmth: 2, occasions: ['sport'], rating: 3, look: 2, comfort: 5 }),
+      garment({ id: 'runner', category: 'shoes', colors: ['blau'], styles: ['sportlich'], warmth: 2, occasions: ['sport'] }),
+    ];
+    let sporty = 0;
+    for (let seed = 1; seed <= 10; seed++) {
+      const cool = seed % 2 === 0 ? weather({ min: 4, max: 13, rainChance: 35 }) : null;
+      const [s] = ok(
+        generateOutfits(input(w, { seed, weather: cool, rules: rulesFor('sport'), activityName: 'Sport', sliders: rulesFor('sport').sliders })),
+      );
+      if (s!.items.pants?.id === 'track' && s!.items.shoes?.id === 'runner') sporty++;
+    }
+    expect(sporty).toBeGreaterThanOrEqual(8);
+  });
+});

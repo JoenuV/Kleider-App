@@ -1,0 +1,219 @@
+.weather-card {
+  position: relative;
+  background: var(--surface);
+  border-radius: 26px;
+  box-shadow: var(--shadow);
+  padding: 14px 18px 12px;
+  overflow: hidden;
+}
+
+.wc-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0 -8px;
+}
+
+.wc-place {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 0 10px;
+  border: none;
+  border-radius: 999px;
+  background: none;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink-2);
+  max-width: 60%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wc-place:active {
+  background: var(--surface-2);
+}
+
+.wc-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.wc-temp {
+  display: flex;
+  flex-direction: column;
+}
+
+.wc-deg {
+  font-size: 76px;
+  line-height: 0.95;
+}
+
+.wc-feels {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.wc-icon {
+  color: var(--warm);
+  margin-right: 4px;
+}
+
+.wc-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 16px 0 0;
+}
+
+.wc-stats > div {
+  background: var(--bg);
+  border-radius: 14px;
+  padding: 8px 10px;
+}
+
+.wc-stats dt {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.wc-stats dd {
+  margin: 2px 0 0;
+  font-weight: 750;
+  font-size: 16px;
+}
+
+.wc-hourly {
+  margin: 12px 0 0;
+  color: var(--accent);
+}
+
+.wc-hourly svg {
+  width: 100%;
+  height: 74px;
+  overflow: visible;
+}
+
+.wc-hourly .dot {
+  fill: var(--surface);
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.wc-hourly .t {
+  font-size: 12px;
+  font-weight: 800;
+  fill: var(--ink);
+}
+
+.wc-hourly .h {
+  font-size: 11px;
+  font-weight: 600;
+  fill: var(--muted);
+}
+
+.wc-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 36px;
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.wc-loading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 120px;
+  color: var(--muted);
+}
+
+.wc-error {
+  padding: 16px 0 8px;
+}
+
+.stepper {
+  display: grid;
+  grid-template-columns: 52px 1fr 52px;
+  align-items: center;
+  gap: 6px;
+}
+
+.stepper .btn {
+  padding: 0;
+  font-size: 22px;
+}
+
+.stepper-val {
+  text-align: center;
+  font-family: var(--display);
+  font-size: 34px;
+}
+
+.activity-picker {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ghost-chip {
+  border-style: dashed;
+  background: transparent;
+}
+
+.activity-rules {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+  max-width: 100%;
+  min-height: 34px;
+  border: none;
+  background: none;
+  padding: 0 2px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.truncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.card-title {
+  font-size: 17px;
+  font-weight: 750;
+}
+
+.suggest-btn {
+  min-height: 64px;
+  font-size: 18px;
+  border-radius: 22px;
+}

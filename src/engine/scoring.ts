@@ -135,21 +135,16 @@ export function itemVariety(g: Garment, ctx: Pick<ScoreContext, 'wear' | 'today'
 }
 
 export function activityScore(items: readonly Garment[], rules: ActivityRules): number {
-  let score = 0.6;
-  const n = Math.max(1, items.length);
-  if (rules.preferStyles.length) {
-    const hits = items.filter((g) => g.styles.some((s) => rules.preferStyles.includes(s))).length;
-    score += 0.4 * (hits / n) - 0.1;
-  }
-  if (rules.avoidStyles.length) {
-    const hits = items.filter((g) => g.styles.some((s) => rules.avoidStyles.includes(s))).length;
-    score -= 0.5 * (hits / n);
-  }
-  if (rules.preferRobust) {
-    const robust = items.filter((g) => !g.delicate && (g.comfort >= 4 || g.rainproof || g.windproof)).length;
-    score += 0.4 * (robust / n) - 0.15;
-  }
-  return clamp01(score);
+  if (!items.length) return 0.6;
+  // Average per garment so every single piece counts.
+  const per = items.map((g) => {
+    let v = 0.7;
+    if (rules.preferStyles.length) v = g.styles.some((s) => rules.preferStyles.includes(s)) ? 1 : 0.3;
+    if (rules.avoidStyles.length && g.styles.some((s) => rules.avoidStyles.includes(s))) v -= 0.35;
+    if (rules.preferRobust) v += !g.delicate && (g.comfort >= 4 || g.rainproof || g.windproof) ? 0.15 : -0.2;
+    return clamp01(v);
+  });
+  return per.reduce((a, b) => a + b, 0) / per.length;
 }
 
 export const WEIGHTS = {
@@ -160,7 +155,7 @@ export const WEIGHTS = {
   rating: 1.6,
   variety: 1.2,
   learned: 1.5,
-  activity: 1,
+  activity: 2.5,
 } satisfies Record<keyof ScoreBreakdown, number>;
 
 export interface FullScore {

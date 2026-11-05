@@ -1,0 +1,79 @@
+.collage {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 26px;
+  background: var(--surface-2);
+  aspect-ratio: 1 / 1.08;
+  width: 100%;
+}
+
+.collage.sm {
+  gap: 3px;
+  padding: 3px;
+  border-radius: 14px;
+}
+
+.collage-col {
+  display: flex;
+  flex-direction: column;
+  gap: inherit;
+  min-height: 0;
+}
+
+.collage-tile {
+  position: relative;
+  flex: 1 1 0;
+  min-height: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--surface);
+  border: none;
+  padding: 0;
+  transition: transform 0.15s ease, box-shadow 0.2s;
+}
+
+.collage.sm .collage-tile {
+  border-radius: 10px;
+}
+
+button.collage-tile:active {
+  transform: scale(0.98);
+}
+
+.collage-tile.hl {
+  box-shadow: 0 0 0 3px var(--accent);
+}
+
+.collage-tile img,
+.collage-tile .img-ph {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tile-tools {
+  position: absolute;
+  inset: auto 6px 6px auto;
+  display: flex;
+  gap: 6px;
+}
+
+.tile-tool {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  backdrop-filter: blur(6px);
+  color: var(--ink);
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.15);
+}
+
+.tile-tool.on {
+  background: var(--accent);
+  color: var(--accent-ink);
+}

@@ -96,12 +96,6 @@
   min-height: 14px;
 }
 
-.img-ph {
-  display: grid;
-  place-items: center;
-  color: var(--muted);
-  background: var(--surface-2);
-}
 
 .chip-count {
   font-size: 12px;

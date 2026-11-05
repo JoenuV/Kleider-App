@@ -6,3 +6,8 @@ import type { Settings } from '../domain/types';
 export function useSettings(): Settings {
   return useLiveQuery(() => getSettings(), [], DEFAULT_SETTINGS);
 }
+
+/** Like useSettings, but undefined until loaded from the database. */
+export function useLoadedSettings(): Settings | undefined {
+  return useLiveQuery(() => getSettings(), []);
+}
