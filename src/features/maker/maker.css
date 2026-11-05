@@ -1,0 +1,116 @@
+.maker-controls {
+  gap: 4px;
+}
+
+.maker-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.option-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 56px;
+  border-top: 1px solid var(--line);
+}
+
+.option-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.anchor-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 4px 4px 4px 4px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.anchor-img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+
+.picker-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.picker-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0;
+  border: none;
+  background: none;
+  text-align: left;
+  min-width: 0;
+}
+
+.picker-item img,
+.picker-item .img-ph {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 14px;
+  outline: 3px solid transparent;
+  outline-offset: -3px;
+  transition: outline-color 0.15s;
+}
+
+.picker-item.on img,
+.picker-item.on .img-ph {
+  outline-color: var(--accent);
+}
+
+.picker-check {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.picker-name {
+  font-size: 12px;
+  font-weight: 650;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.picker-score {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  padding: 2px 7px;
+  border-radius: 99px;
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.none-tile {
+  border: 2px dashed var(--line);
+}
